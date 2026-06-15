@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Dynamic</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container pt-lg-5" id="inputForm">
+        <form class="form-group border rounded input-form p-5">
+            <label class="form-label" for="userName">User Name</label>
+            <input type="text" class="form-control rounded" id="userName" name="userName"
+                placeholder="Enter Your Full Name" required />
+
+            <label class="form-label py-lg-1" for="userEmail">User Email</label>
+            <input type="email" class="form-control rounded" id="userEmail" name="userEmail"
+                placeholder="Enter Your Email" required />
+
+            <label class="form-label py-lg-1" for="phone">Phone</label>
+            <input type="text" class="form-control rounded" id="phone" name="phone"
+                placeholder="Enter Your Phone number" required pattern="/^[0-9]{10}$/" />
+
+            <label class="form-label py-lg-1" for="dob">Date Of Birth</label>
+            <input type="date" class="form-control rounded" id="dob" name="dob" required />
+
+            <div class="form-check">
+                <label class="form-label py-lg-1" for="gender">Gender</label>
+                <input type="radio" class="form-check-radio rounded" id="gender" name="gender" value="Male" required />
+                <label class="form-label py-lg-1" for="gender">Male</label>
+                <input type="radio" class="form-check-radio rounded" id="gender" name="gender" value="Female"
+                    required />
+                <label class="form-check-label py-lg-1" for="gender">Female</label>
+            </div>
+
+            <div class="form-check">
+                <span class="d-block">Qualification</span>
+                <select class="form-select" id="qualification" ria-label="Select Your Qualification" required>
+                    <option value="PG">PG</option>
+                    <option value="UG">UG</option>
+                </select>
+            </div>
+
+            <div class="form-check">
+                <span class="d-block">Skills</span>
+                <input type="checkbox" class="form-check-input rounded" id="skillNode" name="skills" value="nodejs"
+                    required />
+                <label class="form-check-label ps-1 d-block" for="skillNode">Node js</label>
+
+                <input type="checkbox" class="form-check-input rounded" id="skillExpress" name="skills"
+                    value="expressjs" />
+                <label class="form-check-label ps-1 d-block" for="skillExpress">Express js</label>
+
+                <input type="checkbox" class="form-check-input rounded" id="skillLinux" name="skills" value="linux"
+                    required />
+                <label class="form-check-label ps-1 d-block" for="skillLinux">Linux</label>
+            </div>
+
+            <div class="mb-3">
+                <span class="d-block">Address</span>
+                <textarea class="form-control h-50" id="address" placeholder="Enter Your Full Address"
+                    required></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn rounded-pill submit w-100 mt-3 a">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="container mt-5 border rounded detailsDisplay" id="detailsDisplay">
+        <p class="h5 text-center mb-5">User Details</p>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <p class="h5">Name:</p>
+                <p id="displayName"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p class="h5">Email:</p>
+                <p id="displayEmail"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p class="h5">Phone:</p>
+                <p id="displayPhone"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p class="h5">DOB:</p>
+                <p id="displaydob"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p class="h5">Gender:</p>
+                <p id="displayGender"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p class="h5">Qualification:</p>
+                <p id="displayQualification"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p class="h5">Skills:</p>
+                <p id="displaySkills"></p>
+            </div>
+            <div class="col-md-6 mb-3">
+                <p class="h5">Address:</p>
+                <p id="displayAddress"></p>
+            </div>
+        </div>
+        <div class="text-center mt-4 mb-3">
+            <button type="submit" class="btn rounded-pill submit w-100 a" id="editButton">Edit</button>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

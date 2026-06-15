@@ -1,0 +1,35 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: 'poppins',sans-serif;
+}
+.input-form
+{
+    background-color: #06eaf0;
+}
+body
+{
+    background-color: yellowgreen;
+}
+textarea
+{
+    resize: none;
+}
+.a
+{
+    background-color: violet;
+}
+.a:hover
+{
+    background-color: black;
+    color: azure;
+    cursor: pointer;
+}
+.detailsDisplay
+{
+    background-color: #06eaf0;
+    display: none;
+}
