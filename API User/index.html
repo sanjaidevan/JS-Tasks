@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,30 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+    <div class="container form-group pt-5 border rounded mt-5">
+        <label class="form-label py-lg-1" for="inputID">Input User ID</label>
+        <input type="text" class="form-control rounded" id="inputID" name="inputID" placeholder="Enter User ID from 1 to 10"
+            required pattern="/^[0-9]{1}$/" />
+            <div class="text-center p-5">
+                <button type="submit" class="btn bg-primary rounded-pill">Submit</button>
+                <p class="h5 color-red" id="errorMessage"></p>
+            </div>
+    </div>
+    <div class="container mt-5" id="displayDetails">
+        <div class="row border rounded">
+            <div class="col-6">
+                <p class="h3">User Name:</p>
+                <p class="h5" id="userName"></p>
+            </div>
+            <div class="col-6">
+                <p class="h3">User Email:</p>
+                <p class="h5" id="userEmail"></p>
+            </div>
+        </div>
+    </div>
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
