@@ -100,8 +100,7 @@ fetchUsers()
 async function fetchData() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users');
-        if(!response.ok)
-        {
+        if (!response.ok) {
             throw new Error("Error in response")
         }
         console.log("Success");
@@ -110,3 +109,108 @@ async function fetchData() {
     }
 }
 fetchData();
+
+
+//Convert a callback-based function into a promise-based implementation.
+
+function getUser(userId, callback) {
+    setTimeout(() => {
+      if(!userId)
+        {
+          return callback(new Error("Invalid user"))
+        }
+      callback(null,{ UserID: userId, userName: 'Ravi' })}, 1000);
+}
+
+getUser(1, (error, user) => {
+    if (error) {
+        console.log("Error in callback");
+    }
+    else {
+        console.log(user);
+    }
+});
+
+
+//promise-based implementation.
+function getUserPromise(userId)
+{
+  return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      if(!userId)
+        {
+          return reject(new Error("Invalid User"));
+        }
+      resolve({UserID:userId,Name: "Ravi"})
+    })
+  })
+}
+getUserPromise(1)
+  .then((message)=>console.log(message))
+  .catch((error)=>{
+  console.log("Error",error);
+})
+
+
+
+//Given an array, return an object separating odd and even numbers.
+
+const input_nums = [1, 2, 3, 4, 5];
+
+const nums = {
+    odd: [],
+    even: [],
+}
+
+function oddOrEven() {
+    try {
+        input_nums.forEach((element) => {
+            if (element % 2 === 0) {
+                nums.even.push(element);
+                console.log("Even element", element);
+            }
+            else {
+                nums.odd.push(element);
+                console.log("Odd element", element);
+            }
+        })
+    } catch (error) {
+        console.error("Error in check odd or Even is error", error);
+    }
+}
+
+//function call
+oddOrEven();
+console.log(nums)
+
+
+//Create two objects with the same set of properties and implement logic to verify whether they are equal.
+
+const User_1 = {
+    name: "Partha",
+    age: 25,
+    isAdmin: true,
+}
+
+const User_2 = {
+    name: "Partha",
+    age: 25,
+    isAdmin: true,
+}
+
+function checkBothObject() {
+    try {
+        const key1 = Object.keys(User_1);
+        console.log(key1);
+        const key2 = Object.keys(User_2);
+        console.log(key2);
+        if (key1.length === key2.length) {
+            return key1.every((key) => Object.hasOwn(User_2, key) && User_1[key] === User_2[key]);
+        }
+    } catch (error) {
+        console.error("Error in check both object", error);
+    }
+}
+
+//function call
+console.log(checkBothObject());
