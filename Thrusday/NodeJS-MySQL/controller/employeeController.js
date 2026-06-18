@@ -2,8 +2,8 @@ import { readAllemployees } from "../services/employeeServices.js";
 
 export const getAllEmployees = async (req, res, next) => {
     try {
-        const employees = await readAllemployees();
-        const employeeList = users.map((employee) => ({
+        const employees = await readAllemployees();//One variable change users to employees
+        const employeeList = employees.map((employee) => ({
             employee_id: employee.employee_id,
             firstname: employee.firstname,
             role: employee.role
@@ -24,7 +24,7 @@ export const getEmployeeById = async (req, res, next) => {
         }
         const employees = await readAllemployees();
         const employee = employees.find((employee) => employee.employee_id === employee_id) || null;
-        if (!employee) { res.status(404).json({ error: "No employee Found" }) }
+        if (!employee) { res.status(404).json({ error: "No employee Found" }); }
         const chars = "0123456789";
         let randomEmployeeId = "";
         for (let i = 1; i < 7; i++) {
@@ -35,6 +35,6 @@ export const getEmployeeById = async (req, res, next) => {
         console.log(employee);
         res.status(200).json(employee);
     } catch (error) {
-        next(error)
+        next(error);
     }
 }
